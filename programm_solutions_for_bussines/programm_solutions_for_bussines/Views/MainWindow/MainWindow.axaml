@@ -1,0 +1,95 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:programm_solutions_for_bussines.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="programm_solutions_for_bussines.Views.MainWindow.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Sneakers MarketPlace">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid>
+        <StackPanel Spacing="28">
+            <TextBlock></TextBlock>
+            <TextBlock
+                Text="{Binding AutorizHeader}" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" 
+                FontWeight="Bold"
+                FontSize="60"
+                Foreground="#FF007AE1"/>
+            <TextBlock 
+                Text="{Binding AutorizSubHeader}" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center"
+                FontWeight="Regular"
+                FontSize="36"
+                Foreground="Black"/>
+            <TextBox
+                Watermark="{Binding LoginPlaceholder}"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
+                BorderThickness="2"
+                Background="#FFD9D9D9"
+                Width="634"
+                Height="87"
+                CornerRadius="10"
+                FontSize="40"
+                Margin="0,0,0,20"/>
+            <TextBox
+                Watermark="{Binding PasswordPlaceholder}"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Left"
+                BorderThickness="2"
+                Background="#FFD9D9D9"
+                PasswordChar="*"
+                Width="634"
+                Height="87"
+                CornerRadius="10"
+                FontSize="40"
+                Margin="0,0,0,20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <CheckBox
+                    
+                    />
+                <TextBlock
+                    Text="{Binding RememberMe}"
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" 
+                    FontWeight="Regular"
+                    FontSize="20"
+                    Foreground="Black"
+                    />
+                <Rectangle Width="20" Fill="Transparent"/>
+                <Button Content="{Binding ForgotPassword}"
+                        FontSize="12"
+                        Width="150"
+                        Height="30"
+                        Background="White"
+                        Foreground="#FF007AE1"
+                        />
+            </StackPanel>
+            <Button
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" 
+                Content="{Binding SignIn}"
+                FontSize="20"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Width="634"
+                Height="87"
+                CornerRadius="10"
+                Foreground="White"
+                Background="#FF007AE1"
+                />
+        </StackPanel>
+    </Grid>
+</Window>
+
